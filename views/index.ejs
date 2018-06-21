@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hours of Programming!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/semantic/dist/semantic.min.css">
+</head>
+<body>
+    <div class="ui container">
+    <div class="ui segment">
+        <div class="ui container">
+            <h1 class="ui center aligned header">Hey man! Today is: <span id="today"></span></h1>
+            <div class="ui form">
+                    <form class="ui form" action="/hours" method="post">
+                            <h4 class="ui dividing header">Programming Info</h4>
+                            <div class="two fields">
+                            <div class="field">
+                              <label>Language</label>
+                                <div class="field">
+                                    <div class="ui selection dropdown">
+                                        <input type="hidden" name="language">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Language</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="Python">Python</div>
+                                            <div class="item" data-value="C++">C++</div>
+                                            <div class="item" data-value="HTML/CSS/Js">HTML/CSS/Js</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="field">
+                                <label>Framework</label>
+                                <div class="field">
+                                    <div class="ui selection dropdown">
+                                        <input type="hidden" name="framework">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Framework</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="Express.js">Express.js</div>
+                                            <div class="item" data-value="Flask">Flask</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <h4 class="ui dividing header">Fun Information</h4>
+                            <div class="fields">
+                            <div class="eight wide field">
+                                <label>Hours</label>
+                                <div class="ui right labeled input">
+                                        <input type="number" name="hours" placeholder="1..3...999">
+                                        <div class="ui basic label">
+                                            hr(s)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eight wide field">
+                                    <label>Topic</label>
+                                    <div class="ui input">
+                                        <input type="text" name="topic" placeholder="Algorithm analysis">
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="ui segment">
+                              <div class="field">
+                                  <h5>You have: ________ hours of programming under your belt.</h5>
+                              </div>
+                            </div>
+                            <button class="ui basic button" type="submit">Submit</button>
+                          </form>
+                      </div>
+                    </div>
+        </div>
+    </div>
+    <a href="/results"></a>
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="css/semantic/dist/semantic.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

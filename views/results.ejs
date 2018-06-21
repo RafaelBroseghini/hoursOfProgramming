@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>All Hours!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic/dist/icon.min.css">
+</head>
+<body>  
+    <div class="ui container">
+        <div class="ui segment">
+            <h1>Hi there this is you programming backlog <i class"code icon"> </i> </h1>
+            <% for (const s in data) {%>
+                <p><%=s%> : <%=data[s]%></p>
+            <%}%>
+        </div>
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
