@@ -11,11 +11,11 @@ var sessionRoutes = require("./routes/sessions"),
 mongoose.connect("mongodb://localhost/programming");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
+app.set("view engine","ejs");
 
 app.use(indexRoutes);
-app.use(sessionRoutes);
+app.use("/sessions",sessionRoutes);
 
 app.listen(8000, function(){
     console.log("Hours of programming app!");
