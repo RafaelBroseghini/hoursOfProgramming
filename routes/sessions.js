@@ -4,7 +4,12 @@ var express = require("express"),
 var Session = require("../models/session");
 
 router.get("/",function(req, res){
-    group_by_language_sum_hours(function(err, sessions){
+    Session.aggregate([{
+        $group: {
+            _id: '$language',
+            hours: {$sum: '$hours'}
+        }
+    }],function(err, sessions){
         Session.aggregate([{
             $group: {
                 _id: null,
@@ -12,9 +17,13 @@ router.get("/",function(req, res){
             }
         }], function(err, hours){
             let percent = Math.round((hours[0].hours/(22*365*24)*100000))/100000
-            return res.render("sessions/index", {data: sessions, percent:percent});
+            if (err) {
+                res.redirect("/")
+            } else {
+                return res.render("sessions/index", {data: sessions, percent:percent});
+            }
             
-        })
+        })   
     })
 })
 
@@ -29,18 +38,13 @@ router.post("/", function(req, res){
         framework: f,
         hours: h,
         topic: t,
-    })
-    res.redirect("/sessions")    
-});
-
-
-function group_by_language_sum_hours(callback){
-    Session.aggregate([{
-        $group: {
-            _id: '$language',
-            hours: {$sum: '$hours'}
+    }, function(err){
+        if(err){
+            res.redirect("/")
+        } else {
+            res.redirect("/sessions")    
         }
-    }], callback)   
-}
+    })
+});
 
 module.exports = router;
