@@ -12,9 +12,10 @@
 <body>  
     <div class="ui container">
         <div class="ui segment">
-            <h1>Hi there this is you programming backlog <i class"code icon"> </i> </h1>
-            <% for (const s in data) {%>
-                <p><%=s%> : <%=data[s]%></p>
+            <h1 class="ui center aligned header">Here it is wizard! You've dedicated:<%=percent%>
+            % of your life to your programming. <i class"code icon"> </i> </h1>
+            <% for (const s of data) {%>
+                <p><%=s._id%> : <%=s.hours%></p>
             <%}%>
         </div>
     </div>
