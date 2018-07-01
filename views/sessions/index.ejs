@@ -5,22 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>All Hours!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/semantic/dist/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="css/semantic/dist/icon.min.css">
 </head>
 <body>  
     <div class="ui container">
-        <div class="ui segment">
+        <!--<div class="ui segment"> -->
             <h1 class="ui center aligned header">Here it is wizard! You've dedicated:<%=percent%>
             % of your life to your programming. <i class"code icon"> </i> </h1>
             <% for (const s of data) {%>
-                <p><%=s._id%> : <%=s.hours%></p>
+                <p style="display:none"><span class="language"><%=s._id%></span> : <span class="hours"><%=s.hours%></span></p>
             <%}%>
+       <!-- </div> -->
+    </div>
+
+    <div class="ui container">
+            <a href="/">Go back!</a>
+        <div class="ui segment">
+            <canvas id="myChart"></canvas>
         </div>
     </div>
-    
 
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="js/chart.js"></script>
 </body>
 </html>
