@@ -4,15 +4,13 @@ var express = require("express"),
 var Session = require("../models/session");
 
 router.get("/", function(req, res) {
-    console.log("hey");
-    
     Session.aggregate([{
         $group: {
             _id: null,
             hours: {$sum: "$hours"}
         }
     }], function(err, hours){
-        console.log(hours);
+        // console.log(hours);
         if (err) {
             return res.redirect("/");
         } else {

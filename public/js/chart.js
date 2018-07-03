@@ -11,7 +11,7 @@ for (let i = 0; i < languages.length; i++) {
 
 let chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: 'line',
+    type: 'bar',
 
     // The data for our dataset
     data: {

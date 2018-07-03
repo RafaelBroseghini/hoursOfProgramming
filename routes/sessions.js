@@ -20,6 +20,8 @@ router.get("/",function(req, res){
             if (err) {
                 res.redirect("/")
             } else {
+                console.log(sessions);
+                
                 return res.render("sessions/index", {data: sessions, percent:percent});
             }
             
